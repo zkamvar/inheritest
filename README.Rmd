@@ -1,0 +1,70 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+Testing S4 inheritance
+======================
+
+I have a problem with basic inheritance of the `[` operator for S4 objects that
+implement custom arguments. This is a working example from [a stackoverflow post
+I created](http://stackoverflow.com/q/42894213/2752888).
+
+Installation
+------------
+
+You can install it via github, and it should work:
+
+```{r, eval = FALSE}
+devtools::install_github("zkamvar/inheritest")
+```
+
+When it works
+-------------
+
+It works if the package is built to your system
+
+```{r}
+library("inheritest")
+foo <- new("foo", x = pi, y = 2)
+foo["x"]
+foo["y", foo = FALSE]
+bar <- new("bar", x = pi, y = 2, distance = 0)
+bar["x"]
+bar["distance", bar = FALSE]
+```
+
+When it doesn't work
+--------------------
+
+It doesn't work if the package is simply loaded:
+
+
+In the shell:
+
+```sh
+git clone https://github.com/zkamvar/inheritest.git
+cd inheritest
+```
+
+In R:
+
+```{r, error=TRUE}
+devtools::load_all(".")
+foo <- new("foo", x = pi, y = 2)
+foo["x"]
+foo["y", foo = FALSE]
+bar <- new("bar", x = pi, y = 2, distance = 0)
+bar["x"]
+bar["distance", bar = FALSE]
+```
+
