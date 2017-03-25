@@ -3,6 +3,8 @@
 Testing S4 inheritance
 ======================
 
+[![Travis-CI Build Status](https://travis-ci.org/zkamvar/inheritest.svg?branch=master)](https://travis-ci.org/zkamvar/inheritest)
+
 I have a problem with basic inheritance of the `[` operator for S4 objects that implement custom arguments. This is a working example from [a stackoverflow post I created](http://stackoverflow.com/q/42894213/2752888).
 
 Installation
