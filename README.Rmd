@@ -21,6 +21,14 @@ I have a problem with basic inheritance of the `[` operator for S4 objects that
 implement custom arguments. This is a working example from [a stackoverflow post
 I created](http://stackoverflow.com/q/42894213/2752888).
 
+
+### UPDATE
+
+It was revealed as a bug in the `callNextMethod()` implementation and has been
+fixed in the upcoming version of R!
+
+https://github.com/wch/r-source/commit/0c06db284ec6d026040d464c3bfea66cf56a09b7
+
 Installation
 ------------
 
